@@ -6,22 +6,10 @@ using WebDriver_POM_Example.Pages;
 
 namespace WebDriver_POM_Example.Tests
 {
-    public class HomePageTests
+    public class HomePageTests:BaseTests
     {
 
-        private IWebDriver driver;
-
-        [SetUp]
-        public void Setup()
-        {
-            this.driver = new ChromeDriver();
-        }
-        [TearDown]  
-        public void ShutDown()
-        {
-            driver.Quit();
-        }
-
+      
         [Test]
         public void TestHomePage_Url_Heading_Title()
         {

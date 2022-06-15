@@ -15,7 +15,18 @@ namespace WebDriver_POM_Example.Pages
         }
 
         public override string PageUrl => "https://mvc-app-node-express.nakov.repl.co/add-student";
-        
-        
+
+        public IWebElement nameFild => driver.FindElement(By.CssSelector("#name"));
+        public IWebElement emailFild => driver.FindElement(By.CssSelector("#email"));
+        public IWebElement add_button => driver.FindElement(By.CssSelector("body > form > button"));
+        public IWebElement errorMessage => driver.FindElement(By.CssSelector("body > div"));
+
+        public void RegisterStudent (string name, string email)
+        {
+            nameFild.SendKeys(name);
+            emailFild.SendKeys(email);
+            add_button.Click();
+
+        }
     }
 }
